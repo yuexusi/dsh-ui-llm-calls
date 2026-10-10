@@ -1,0 +1,55 @@
+{
+  "name": "dsh-ui-llm-calls",
+  "version": "0.1.0",
+  "description": "LLM call log view for the dsh web client: one card per model request with the complete reconstructed request body, raw stream, usage, timing, and retries.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "engines": {
+    "dsh": ">=0.2.0-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-session"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yuexusi/dsh-ui-llm-calls#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuexusi/dsh-ui-llm-calls.git"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "llm",
+    "calls",
+    "log"
+  ]
+}

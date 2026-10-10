@@ -1,0 +1,5 @@
+# dsh-ui-llm-calls: 模型调用日志视图（持久化组合条目）。
+# 安装后一行同时挂载：宿主空插件 + 客户端「调用」视图卡片。
+- insert:
+    - id: llm-calls
+      name: dsh-ui-llm-calls
